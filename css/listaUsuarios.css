@@ -1,0 +1,31 @@
+table tr th, td{
+    text-align: center;
+}
+
+table tr td i{
+    cursor: pointer;
+    font-size: 20px;
+    transition:all ease .3s;
+}
+
+table tr td i:hover{
+    cursor: pointer;
+    
+    font-size: 25px;
+}
+
+table tr td .i-delete{
+    color: rgb(85, 51, 171);
+}
+
+table tr td .i-pwd{
+    color: rgb(19, 97, 153);
+}
+
+table tr td .i-edit{
+    color: rgb(62, 134, 95);
+}
+
+table tr td .i-info{
+    color: rgb(211, 134, 46);
+}
