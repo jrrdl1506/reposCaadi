@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&display=swap');
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+.bar_blue{
+    /*background: #1d55bc;*/
+    background: rgb(7,46,116);
+    background: linear-gradient(90deg, rgba(7,46,116,1) 9%, rgba(29,85,176,1) 50%, rgba(21,93,209,1) 91%);
+    height: 10vh;
+}
+
+.bar_red{
+    background: #d9a30e;
+    height: 0.9vh;
+}
+
+.logo_idiomas{
+    height: 80%;
+    margin-left: 2.5vw;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*
+.bg{
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: url('img_1.jpg');
+    background-size: cover;
+}
+*/
+
+.flex-container {
+  height: 100%;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-align-content: space-around;
+  -ms-flex-line-pack: distribute;
+  align-content: space-around;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+
+  }
+
+.flex-item:nth-child(1) {
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+  background: #f1f0f0;
+  max-width:30%;
+  }
+
+.flex-item:nth-child(2) {
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 3 1 auto;
+  -ms-flex: 3 1 auto;
+  flex: 3 1 auto;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+  background-image: url('img_1.jpg');
+    background-size: cover;
+  }
+
+  .loginform{
+    margin-top: 23%;
+    text-align: center;
+    
+  }
+
+  h2{
+    color: #222222;
+    font-size: 1.5rem !important;
+    /*text-shadow: 8px 8px 8px rgba(21, 21, 21, 0.807);*/
+    /*font-family: 'Noto Sans', sans-serif;*/
+    font-family: 'Roboto Flex', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  h3{
+    color: #222222;
+    font-size: 1rem !important;
+    /*text-shadow: 8px 8px 8px rgba(21, 21, 21, 0.807);*/
+    font-family: 'Roboto Flex', sans-serif;
+    letter-spacing: 0.5px;
+    
+  }
+
+  .input_form{
+    font-family: 'Roboto Flex', sans-serif;
+    width: 280px;
+    height: 35px;
+    border-radius: 50px;
+    font-size: 14px;
+    padding: 5px;
+    background: #dcdcdc;
+    border: none;
+    text-align: center;
+    color: #7a7979;
+    transition: all .5s ease-out;
+    max-width: 600px;
+  }
+
+
+  .input_form:focus{
+    border-color: #777;
+    color: #ffffff;
+    background: #ef9b1d;
+    outline: 0;
+    
+
+  }
+
+  .input_form:focus::-webkit-input-placeholder {
+    color: rgb(239, 237, 237);
+  } 
+
+  .logo_container{
+    display:block;
+    margin:auto;
+   
+  }
+
+  .uaa_logo{
+   width: 100px;
+   height: 80px;
+
+  }
+
+
+  .login_btn{
+    width: 280px;
+    height: 35px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 15px !important;
+    font-weight:700 !important ;
+    letter-spacing: 1px !important;
+    border-radius:  40px !important;
+  }

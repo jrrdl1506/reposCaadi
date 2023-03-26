@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    /*FONT FAMILY*/
+}
+
+body{
+   
+    background-color: rgb(242, 242, 1);
+   
+}
+
+.side-bar{
+    background: rgb(8, 23, 86);
+    backdrop-filter: blur(15px);
+    width: 310px !important;
+    height: 100vh;
+    
+    overflow-y: auto;
+}
+
+.side-bar .active{
+    left:0; 
+}
+
+.side-bar .menu{
+    width: 100%;
+    /*margin-top: 80px;*/
+}
+
+.side-bar .menu .item{
+    position:relative;
+    cursor:pointer;
+}
+
+.side-bar .menu .sidebar-user{
+    color: rgb(255, 255, 255);
+    background: rgb(13, 22, 93) !important;
+    font-size: 12px;
+    text-decoration: none;
+    display: block;
+    padding: 15px 25px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 800px;
+    letter-spacing: 2px;
+}
+
+
+
+.side-bar .menu .sidebar-user i{
+    margin-right: 15px;
+    font-size: 30px;
+}
+
+.side-bar .menu .item a{
+    color: rgb(255, 255, 255);
+    background: rgb(34, 47, 163);
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    padding: 5px 30px;
+    line-height: 60px;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+.side-bar .menu .item .sub-item{
+    color: rgb(255, 255, 255);
+    background: rgb(51, 85, 218);
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    padding: 5px 30px;
+    line-height: 60px;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+.side-bar .menu .item a:hover{
+    background: rgb(209, 33, 33);
+    transition:0.3s ease;
+}
+
+.side-bar .menu .sub-menu:hover{
+    background: rgb(222, 76, 76) !important;
+    transition:0.3s ease;
+}
+
+.side-bar .menu .item i{
+    margin-right: 15px;
+}
+
+.side-bar .menu .item a .dropdown{
+    position: absolute;
+    right: 0;
+    margin:20px;
+    transition:0.3s ease;
+}
+
+
+
+.side-bar .menu .item .sub-menu{
+    background: rgba(189, 189, 189, 0.467) !important;
+    display: none;
+}
+
+.side-bar .menu .item .sub-menu a{
+    padding-left: 40px;
+}
+
+.rotate{
+    transform: rotate(90deg);
+}
+
+.close-btn{
+    position:absolute;
+    color: #fff;
+    font-size:20px;
+    right:0;
+    margin:25px;
+    cursor:pointer;
+}
+
+
+.menu-btn{
+    position:absolute;
+    color:#fff;
+    font-size:20px;
+    margin: 25px;
+    cursor:pointer;
+}
+
+
+body{
+    background: rgb(13, 22, 93) !important;
+}
+
+
+
+temp{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    
+}
+
+temp .page-title{
+    margin:  auto 0 !important;
+    margin-left: 32px !important;
+    color: #ffffff;
+}
+
+
+.top-bar{
+    background: #e12825;
+    width: 100%;
+    height: 74px;
+}
+
+.top-bar2{
+    background: #ffbf00;
+   width: 100%;
+    height: 12px;
+}
+
+.top-bar3{
+    background: #ffffff;
+   width: 100%;
+   min-height: 90vh;
+    
+}
+
+.btn{
+    margin: 0 auto;
+    width: 300px !important;
+}
+
+
+/*
+  background: rgb(209, 33, 33); NARANJA
+
+*/

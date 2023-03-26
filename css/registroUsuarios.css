@@ -1,0 +1,21 @@
+form .form-div{
+    margin-left: 5%;
+    margin-top: 35px;
+   
+}
+
+form .form-div .form-section{
+    margin-left: 30px;
+   
+}
+
+
+form .form-div .form-section input{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+form .form-div .form-section select{
+    margin-left:15px;
+    margin-top:10px;
+}
