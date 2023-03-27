@@ -11,8 +11,10 @@ table tr td i{
 table tr td i:hover{
     cursor: pointer;
     
-    font-size: 25px;
+    font-size: 30px;
 }
+
+
 
 table tr td .i-delete{
     color: rgb(85, 51, 171);

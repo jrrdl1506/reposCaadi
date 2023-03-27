@@ -1,5 +1,5 @@
 <?php
-    require("../classes/usuario.php");
+    require("classes/usuario.php");
 
     function get_Usuarios(){
         $ArrayUsuarios=array();

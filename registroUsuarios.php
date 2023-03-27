@@ -1,9 +1,7 @@
 <?php
     require("connection.php");
     require("registroUsuarios_service.php");
-
-
-
+   
 ?>
 
 <!DOCTYPE html>
