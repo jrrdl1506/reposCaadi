@@ -50,10 +50,10 @@
                         echo "<th scope='row'>".$User->uId."</th>";
                         echo "<td>".$User->uNombre."</td>";
                         echo "<td>".$User->uApeP."</td>";
-                        echo "<td>".$User->uTipo."</td>";
-                        echo "<td>"."PENDIENTE"."</td>";
+                        echo "<td>".obtenerTipo($User->uTipo)."</td>";
+                        echo "<td>".obtenerCategoria($User->uCategory)."</td>";
                         echo " <td >
-                        <i style='margin-left:5px;' class='fa fa-address-book i-info' aria-hidden='true'></i>
+                        <i style='margin-left:5px;' class='fa fa-address-book i-info' aria-hidden='true' data-bs-toggle='modal' data-bs-target='#exampleModal'></i>
                         <i  style='margin-left:5px;' class='fa fa-wrench i-edit' aria-hidden='true'></i>
                         <i style='margin-left:5px;' class='fa fa-unlock-alt i-pwd' aria-hidden='true'></i>
                         <i style='margin-left:5px;' class='fa fa-trash i-delete' aria-hidden='true'></i></td>";
@@ -75,7 +75,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>

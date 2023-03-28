@@ -24,12 +24,13 @@ if(isset($_POST["registraUsuario"])){
 
     $id    = $_POST["r_id"] ;
     $pwd = "12345";
-    $tipo   = $_POST["r_tipo"] ;           
+    $tipo   = 1;           
     $nombre =   $_POST["r_nombre"] ; 
     $apePat =   $_POST["r_apePat"] ; 
     $apeMat =   $_POST["r_apeMat"] ;
     $email = "---";
     $tel=0;
+    $cat=$_POST["r_tipo"];
     if ($_POST["r_tel"] != ""){
         $tel=$_POST["r_tel"];
     }
@@ -45,8 +46,8 @@ if(isset($_POST["registraUsuario"])){
         $foto = "default.jpg";
     }
 
-    $query = "INSERT INTO usuario (id,nombre,apPat,apMat,tel,pwd,tipo,foto,email)
-    values ('$id', '$nombre', '$apePat', '$apeMat', '$tel', '$pwd', '$tipo', '$foto','$email')";
+    $query = "INSERT INTO usuario (id,nombre,apPat,apMat,tel,pwd,tipo,foto,email,categoria)
+    values ('$id', '$nombre', '$apePat', '$apeMat', '$tel', '$pwd', '$tipo', '$foto','$email','$cat')";
     
     if($connection->query($query) != TRUE){
         $_SESSION["message"] = '"Hubo un problema. Contacte al personal de CAADI.","Error: '.$connection->error.'","error"';
