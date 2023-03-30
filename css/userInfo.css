@@ -1,0 +1,23 @@
+.formInfoUser{
+    background: #d5d5d5;
+    margin: 0 5%;
+    margin-top:3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.icon-circle{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #9a3a3a;
+    border-radius: 100%;
+    font-size: 35px;
+    color: aliceblue;
+}

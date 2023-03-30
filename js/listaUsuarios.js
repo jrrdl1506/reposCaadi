@@ -23,3 +23,9 @@ function delUser(nombre){
       })
      
 }
+
+
+function viewUser(){
+    alert("Hola");
+    $(location).prop('href', 'listaUsuarios.php');
+}

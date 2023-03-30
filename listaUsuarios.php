@@ -55,8 +55,8 @@
 
                    
                         echo "<td >
-                        <i style='margin-left:5px;' class='fa fa-address-book i-info' ></i>
-                        <i  style='margin-left:5px;' class='fa fa-wrench i-edit' aria-hidden='true'></i>
+                        <a href='userInfo.php?userId=".$User->uId."&action=view'><i  style='margin-left:5px;' class='fa fa-address-book i-info' ></i></a>
+                        <a href='userInfo.php?userId=".$User->uId."&action=edit'><i  style='margin-left:5px;' class='fa fa-wrench i-edit' aria-hidden='true'></i></a>
                         <i  style='margin-left:5px;' class='fa fa-unlock-alt i-pwd' aria-hidden='true'></i>
                         <i id='".$User->uNombre."' onclick='delUser(this.id)' style='margin-left:5px;' class='fa fa-trash i-delete' aria-hidden='true'></i></td>";
                       
