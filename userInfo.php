@@ -31,39 +31,36 @@
                 <div class="icon-circle">JJ</div>
                 
             </div>
-            <div class="container" style='text-align:center;'>
-            <br>
-                <h3>Jose de Jesus</h3>
-                <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+            <div class="user-info" style='text-align:center;'>
+                <br>
+                <h2>Jose de Jesus</h2>
+                <br>
+                <h5>Información de Usuario</h5>
+                <h6>Id Usuario</h6>
+                <p>226959</p>
+                
+                <h6>Tipo de Usuario</h6>
+                <p>Alumno</p>
+                <h6>Categoria</h6>
+                <p>Externo</p>
+
+                <br>
+                <h5>Información de Contacto</h5>
+                <h6>Teléfono</h6>
+                <p>226959</p>
+                <h6>Email</h6>
+                <p>226959</p>
+
+                <div class="d-flex justify-content-around">
+                  <button class='btn btn-danger'>Confirmar Cambios</button>
+                </div>
+                <br>
+                
+                
+               
+  
             </div>
+            <br>
             
             
         </div>
