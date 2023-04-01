@@ -1,6 +1,6 @@
 <?php
  require("connection.php");
- require("services/generalPurpose_service.php");
+ require("services/usuarios_service.php");
  $ArrUsuarios = get_Usuarios();
 
 

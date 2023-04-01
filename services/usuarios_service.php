@@ -28,6 +28,23 @@
     
     }
 
+    function get_Usuario($userId){
+        $connection = connect();
+        $query = "SELECT * FROM usuario WHERE id=$userId";
+        if($connection->query($query)!=TRUE){
+            echo("Error conectandose a la base de datos");
+        }
+        else{
+            $result=$connection->query($query);
+            $row = $result->fetch_assoc();
+            
+            $ObjUsuario = new Usuario();
+            $ObjUsuario->constructor($row["id"],$row["nombre"],$row["apPat"],$row["apMat"],$row["tipo"],$row["tel"],$row["foto"],$row["email"],$row["categoria"]);
+
+        }
+        return $ObjUsuario;
+    }
+
     function obtenerTipo($tipo){
         $uType="";
         switch($tipo){
