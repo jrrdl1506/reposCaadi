@@ -2,7 +2,13 @@
     require("connection.php");
     require("services/usuarios_service.php");
     $verUsuario=get_Usuario($_GET["userId"]);
-    echo $verUsuario->uNombre;
+    
+    $red = rand(0, 255);
+    $green = rand(0, 255);
+    $blue = rand(0, 255);
+
+    $rgb = "rgb($red, $green, $blue)";
+
 
 ?>
 
@@ -37,158 +43,180 @@
                 
 
             
-                <div class="icon-circle">JJ</div>
+                <div class="icon-circle" style=<?php echo "'background:$rgb'"?>>JJ</div>
                 
             </div>
             <div class="user-info" style='text-align:center;'>
                 <br>
-                <h2>Jose de Jesus</h2>
+                <h2><?php echo $verUsuario->uNombre ." ". $verUsuario->uApeP ?></h2>
                 <br>
-                <h5>Información de Usuario</h5>
+                <form class="d-flex justify-content-around  bd-highlight" >
+                    <div class="user-info-pad">
+                        <h5>Información de Usuario</h5>
 
-                <h6>Id Usuario</h6>
-                <?php
-                if($_GET["action"]=="view"){
-                    echo "<p>".$verUsuario->uId."</p>";
-                }
-                else{
-                    echo "
-                    <div class='d-flex justify-content-center' >
-                    <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uId."'>
-                    </div>";
+                            <h6>Id Usuario</h6>
+                            <?php
+                            if($_GET["action"]=="view"){
+                                echo "<p>".$verUsuario->uId."</p>";
+                            }
+                            else{
+                                echo "
+                                <div class='d-flex justify-content-center' >
+                                <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uId."'>
+                                </div>";
 
-                }
-                ?>
+                            }
+                            ?>
+                            <br>
+
+                            <h6>Tipo de Usuario</h6>
+                            <?php
+                            if($_GET["action"]=="view"){
+                                echo "<p>".obtenerTipo($verUsuario->uTipo)."</p>";
+                            }
+                            else{
+                                echo "
+                                <div class='d-flex justify-content-center'>
+                                <select name='r_tipo' class='form-select' style='width:300px;' aria-label='Default select example'>
+                                        
+                                    <option selected value='1'>Alumno</option>
+                                    <option value='2'>Asesor</option>
+                                    <option value='3'>Profesor</option>
+                                    <option value='4'>Administrador</option>
+                                
+                                </select>
+                                </div>";
+
+                            }
+                            ?>
+                            <br>
+                            <h6>Categoria</h6>
+                            <?php
+                            if($_GET["action"]=="view"){
+                                echo "<p>".obtenerCategoria($verUsuario->uCategory)."</p>";
+                            }
+                            else{
+                                echo "
+                                <div class='d-flex justify-content-center'>
+                                <select name='r_tipo' class='form-select' style='width:300px;' aria-label='Default select example'>
+                                        
+                                    <option selected value='1'>Extensión</option>
+                                    <option value='2'>DAFI</option>
+                                    <option value='3'>Externos</option>
+                                    <option value='4'>LDII</option>
+                                    <option value='5'>FLE-ELE</option>
+                                    <option value='6'>Formación de Profesores</option>
+                                </select>
+                                </div>";
+
+                            }
+                            ?>
+                            <br>
+                    </div>
+
+                    
+                    <div class="user-info-pad">
+                        <h5>Información Personal</h5>
+                        <h6>Nombre</h6>
+                        <?php
+                        if($_GET["action"]=="view"){
+                            echo "<p>".$verUsuario->uNombre."</p>";
+                        }
+                        else{
+                            echo "
+                            <div class='d-flex justify-content-center' >
+                            <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uNombre."'>
+                            </div>";
+
+                        }
+                        ?>
+                        <br>
+                        <h6>Apellido Paterno</h6>
+                        <?php
+                        if($_GET["action"]=="view"){
+                            echo "<p>".$verUsuario->uApeP."</p>";
+                        }
+                        else{
+                            echo "
+                            <div class='d-flex justify-content-center' >
+                            <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uApeP."'>
+                            </div>";
+
+                        }
+                        ?>
+                        <br>
+                        <h6>Apellido Materno</h6>
+                        <?php
+                        if($_GET["action"]=="view"){
+                            echo "<p>".$verUsuario->uApeM."</p>";
+                        }
+                        else{
+                            echo "
+                            <div class='d-flex justify-content-center' >
+                            <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uApeM."'>
+                            </div>";
+
+                        }
+                        ?>
+                    </div>
+
+                    <div class="user-info-pad">
+                        <h5>Información de Contacto</h5>
+                        <h6>Teléfono</h6>
+                        <?php
+                        if($_GET["action"]=="view"){
+                            echo "<p>".$verUsuario->uTel."</p>";
+                        }
+                        else{
+                            echo "
+                            <div class='d-flex justify-content-center' >
+                            <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uTel."'>
+                            </div>";
+
+                        }
+                        ?>
+                        <br>
+                        <h6>Email</h6>
+                        <?php
+                        if($_GET["action"]=="view"){
+                            echo "<p>".$verUsuario->uEmail."</p>";
+                        }
+                        else{
+                            echo "
+                            <div class='d-flex justify-content-center' >
+                            <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uEmail."'>
+                            </div>
+                            <br><br>
+                           <div class='d-flex justify-content-around'>
                 
-                
-                <h6>Tipo de Usuario</h6>
-                <?php
-                if($_GET["action"]=="view"){
-                    echo "<p>".obtenerTipo($verUsuario->uTipo)."</p>";
-                }
-                else{
-                    echo "
-                    <div class='d-flex justify-content-center'>
-                    <select name='r_tipo' class='form-select' style='width:300px;' aria-label='Default select example'>
+                                <button  type='submit' name='registraUsuario' class='btn btn-danger' class='btn btn-danger'>Confirmar Cambios</button>
+                            </div>
+
+                    
+                        </div>
                             
-                        <option selected value='1'>Alumno</option>
-                        <option value='2'>Asesor</option>
-                        <option value='3'>Profesor</option>
-                        <option value='4'>Administrador</option>
-                      
-                    </select>
-                    </div>";
+                            ";
 
-                }
-                ?>
-                <h6>Categoria</h6>
-                <?php
-                if($_GET["action"]=="view"){
-                    echo "<p>".obtenerCategoria($verUsuario->uCategory)."</p>";
-                }
-                else{
-                    echo "
-                    <div class='d-flex justify-content-center'>
-                    <select name='r_tipo' class='form-select' style='width:300px;' aria-label='Default select example'>
-                            
-                        <option selected value='1'>Extensión</option>
-                        <option value='2'>DAFI</option>
-                        <option value='3'>Externos</option>
-                        <option value='4'>LDII</option>
-                        <option value='5'>FLE-ELE</option>
-                        <option value='6'>Formación de Profesores</option>
-                    </select>
-                    </div>";
+                        }
+                        ?>
 
-                }
-                ?>
-                <br>
-                <h5>Información Personal</h5>
-                <h6>Nombre</h6>
-                <?php
-                if($_GET["action"]=="view"){
-                    echo "<p>".$verUsuario->uTel."</p>";
-                }
-                else{
-                    echo "
-                    <div class='d-flex justify-content-center' >
-                    <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uNombre."'>
-                    </div>";
+                        
 
-                }
-                ?>
-                
-                <h6>Apellido Paterno</h6>
-                <?php
-                if($_GET["action"]=="view"){
-                    echo "<p>".$verUsuario->uEmail."</p>";
-                }
-                else{
-                    echo "
-                    <div class='d-flex justify-content-center' >
-                    <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uApeP."'>
-                    </div>";
+                 
+                </form>
 
-                }
-                ?>
 
-                <h6>Apellido Materno</h6>
-                <?php
-                if($_GET["action"]=="view"){
-                    echo "<p>".$verUsuario->uEmail."</p>";
-                }
-                else{
-                    echo "
-                    <div class='d-flex justify-content-center' >
-                    <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uApeM."'>
-                    </div>";
 
-                }
-                ?>
 
-                <br>
-                <h5>Información de Contacto</h5>
-                <h6>Teléfono</h6>
-                <?php
-                if($_GET["action"]=="view"){
-                    echo "<p>".$verUsuario->uTel."</p>";
-                }
-                else{
-                    echo "
-                    <div class='d-flex justify-content-center' >
-                    <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uTel."'>
-                    </div>";
+ 
 
-                }
-                ?>
-                
-                <h6>Email</h6>
-                <?php
-                if($_GET["action"]=="view"){
-                    echo "<p>".$verUsuario->uEmail."</p>";
-                }
-                else{
-                    echo "
-                    <div class='d-flex justify-content-center' >
-                    <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uEmail."'>
-                    </div>";
-
-                }
-                ?>
-
-               
-                
-                <div class="d-flex justify-content-around">
-                
-                  <button class='btn btn-danger'>Confirmar Cambios</button>
-                </div>
-                <br>
+              
                 
                 
                
   
             </div>
-            <br>
+        
             
             
         </div>
