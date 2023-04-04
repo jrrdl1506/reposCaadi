@@ -1,6 +1,7 @@
 <?php
     require("connection.php");
     require("services/usuarios_service.php");
+    require("userInfo_service.php");
     $verUsuario=get_Usuario($_GET["userId"]);
     
     $red = rand(0, 255);
@@ -50,7 +51,7 @@
                 <br>
                 <h2><?php echo $verUsuario->uNombre ." ". $verUsuario->uApeP ?></h2>
                 <br>
-                <form class="d-flex justify-content-around  bd-highlight" >
+                <form action="" method="post" class="d-flex justify-content-around  bd-highlight" >
                     <div class="user-info-pad">
                         <h5>Información de Usuario</h5>
 
@@ -62,7 +63,7 @@
                             else{
                                 echo "
                                 <div class='d-flex justify-content-center' >
-                                <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uId."'>
+                                <input name='m_id' class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uId."'>
                                 </div>";
 
                             }
@@ -77,7 +78,7 @@
                             else{
                                 echo "
                                 <div class='d-flex justify-content-center'>
-                                <select name='r_tipo' class='form-select' style='width:300px;' aria-label='Default select example'>
+                                <select name='m_tipo' class='form-select' style='width:300px;' aria-label='Default select example'>
                                         
                                     <option selected value='1'>Alumno</option>
                                     <option value='2'>Asesor</option>
@@ -98,7 +99,7 @@
                             else{
                                 echo "
                                 <div class='d-flex justify-content-center'>
-                                <select name='r_tipo' class='form-select' style='width:300px;' aria-label='Default select example'>
+                                <select name='m_cat' class='form-select' style='width:300px;' aria-label='Default select example'>
                                         
                                     <option selected value='1'>Extensión</option>
                                     <option value='2'>DAFI</option>
@@ -125,7 +126,7 @@
                         else{
                             echo "
                             <div class='d-flex justify-content-center' >
-                            <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uNombre."'>
+                            <input name='m_nom' class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uNombre."'>
                             </div>";
 
                         }
@@ -139,7 +140,7 @@
                         else{
                             echo "
                             <div class='d-flex justify-content-center' >
-                            <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uApeP."'>
+                            <input name='m_apep' class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uApeP."'>
                             </div>";
 
                         }
@@ -153,7 +154,7 @@
                         else{
                             echo "
                             <div class='d-flex justify-content-center' >
-                            <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uApeM."'>
+                            <input name='m_apem' class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uApeM."'>
                             </div>";
 
                         }
@@ -170,7 +171,7 @@
                         else{
                             echo "
                             <div class='d-flex justify-content-center' >
-                            <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uTel."'>
+                            <input name='m_tel' class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uTel."'>
                             </div>";
 
                         }
@@ -184,12 +185,12 @@
                         else{
                             echo "
                             <div class='d-flex justify-content-center' >
-                            <input class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uEmail."'>
+                            <input name='m_email' class='form-control' type='text'  style='width:300px;' value='".$verUsuario->uEmail."'>
                             </div>
                             <br><br>
                            <div class='d-flex justify-content-around'>
                 
-                                <button  type='submit' name='registraUsuario' class='btn btn-danger' class='btn btn-danger'>Confirmar Cambios</button>
+                                <button  type='submit' name='modificaUsuario' name='registraUsuario' class='btn btn-danger' class='btn btn-danger'>Confirmar Cambios</button>
                             </div>
 
                     
