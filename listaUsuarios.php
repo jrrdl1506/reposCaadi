@@ -58,8 +58,8 @@
                         <a href='userInfo.php?userId=".$User->uId."&action=view'><i  style='margin-left:5px;' class='fa fa-address-book i-info' ></i></a>
                         <a href='userInfo.php?userId=".$User->uId."&action=edit'><i  style='margin-left:5px;' class='fa fa-wrench i-edit' aria-hidden='true'></i></a>
                         <i  style='margin-left:5px;' class='fa fa-unlock-alt i-pwd' aria-hidden='true'></i>
-                        <i id='".$User->uNombre."' onclick='delUser(this.id)' style='margin-left:5px;' class='fa fa-trash i-delete' aria-hidden='true'></i></td>";
-                      
+                        <i id='".$User->uId."' onclick='viewUser(this.id)' data-bs-toggle='modal' data-bs-target='#exampleModal' style='margin-left:5px;' class='fa fa-trash i-delete' aria-hidden='true'></i></td>";
+                       
                         echo "</tr>";
                     }
 
@@ -72,24 +72,34 @@
         </table>
 
         <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <div style="text-align:center">
+        <br>
+        <i class="fa fa-exclamation-triangle" style="font-size: 110px; color:rgba(188, 65, 79, 1)" aria-hidden="true"></i>
+        <br>
+        <h2>¿Está seguro?</h2>
+
+            <h4 id="target-Modal">Está por eliminar al usuario: Jorge Romo</h4>
+            <br>
+            <div class="d-flex justify-content-center">
+            <form id="user-Delete" action="" method="post">
+            <button  type="submit" name="delUser" class="btn btn-danger">Eliminar Usuario</button>
+            </form>
+        </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        
       </div>
     </div>
   </div>

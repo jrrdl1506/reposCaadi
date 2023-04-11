@@ -1,6 +1,5 @@
 
 
-
 function delUser(nombre){
     Swal.fire({
         title: '¿Estas seguro?',
@@ -25,7 +24,12 @@ function delUser(nombre){
 }
 
 
-function viewUser(){
-    alert("Hola");
-    $(location).prop('href', 'listaUsuarios.php');
+
+
+function viewUser(id){
+   
+    $("#target-Modal").text("Se va a elminar al usuario " + id);
+    $("#user-Delete").append("<input  value="+id+" name='id-Del' >");
+
+   
 }

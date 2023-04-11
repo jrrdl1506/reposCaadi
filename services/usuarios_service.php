@@ -45,6 +45,19 @@
         return $ObjUsuario;
     }
 
+    function deleteUsuario($userId){
+        $connection = connect();
+        $query="DELETE FROM  WHERE id;=$userId";
+        if($connection->query($query)!=TRUE){
+            echo("Error conectandose a la base de datos");
+        }
+        else{
+            echo "Si se hizo el query";
+        }
+
+
+    }
+
     function obtenerTipo($tipo){
         $uType="";
         switch($tipo){
@@ -102,6 +115,26 @@
         }
 
         return $uCat;
+
+    }
+
+
+    if(isset($_POST["delUser"])){
+        $connection = connect(0);
+        $idUser=$_POST["id-Del"];
+        echo $idUser;
+        $query="DELETE FROM usuario WHERE id=$idUser";
+    
+    if($connection->query($query) != TRUE){
+        $_SESSION["message"] = '"Hubo un problema. Contacte al personal de CAADI.","Error: '.$connection->error.'","error"';
+        disconnect($connection);
+        //header('Location:'.$url);
+    }
+    else {
+        echo ("Si se hizo el query");
+        header('Location: listaUsuarios.php?swalSuccess=true');
+
+    }
 
     }
 
