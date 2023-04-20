@@ -1,0 +1,4 @@
+select {
+    display: block; /* Para que el elemento sea de bloque */
+    margin: 0 auto; /* Para centrar horizontalmente */
+  }

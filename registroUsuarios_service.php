@@ -9,7 +9,8 @@ if(isset($_POST["registraUsuario"])){
     || $_POST["r_tipo"]=="" 
     || $_POST["r_nombre"]=="" 
     || $_POST["r_apePat"]=="" 
-    || $_POST["r_apeMat"]=="" ){
+    || $_POST["r_apeMat"]=="" 
+    || $_POST["r_userType"]=="" ){
         echo "DATOS INCOMPLETOS";
 
     }
@@ -24,7 +25,7 @@ if(isset($_POST["registraUsuario"])){
 
     $id    = $_POST["r_id"] ;
     $pwd = "12345";
-    $tipo   = 1;           
+    $tipo   = $_POST["r_userType"];           
     $nombre =   $_POST["r_nombre"] ; 
     $apePat =   $_POST["r_apePat"] ; 
     $apeMat =   $_POST["r_apeMat"] ;

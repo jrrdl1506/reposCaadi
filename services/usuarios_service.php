@@ -1,6 +1,7 @@
 <?php
     require("classes/usuario.php");
 
+    //Regresa todos los usuarios
     function get_Usuarios(){
         $ArrayUsuarios=array();
     
@@ -28,6 +29,8 @@
     
     }
 
+
+    //Regresa un usuario
     function get_Usuario($userId){
         $connection = connect();
         $query = "SELECT * FROM usuario WHERE id=$userId";
@@ -45,6 +48,7 @@
         return $ObjUsuario;
     }
 
+    //Borra un usuario
     function deleteUsuario($userId){
         $connection = connect();
         $query="DELETE FROM  WHERE id;=$userId";
@@ -58,6 +62,7 @@
 
     }
 
+    //Regresa el tipo del usuario
     function obtenerTipo($tipo){
         $uType="";
         switch($tipo){
@@ -84,6 +89,7 @@
 
     }
 
+    //Regresa la categoria del usuario
     function obtenerCategoria($cat){
         $uCat="";
         switch($cat){
@@ -118,7 +124,35 @@
 
     }
 
+    //Obtener todos los profesores
+    function get_Profesores(){
+        
+        $ArrayUsuarios=array();
+    
+        $connection=connect();
+        $query = "SELECT * FROM usuario WHERE tipo=2";
+        if($connection->query($query) != TRUE){
+            echo("Error al conectarse a la base de datos");
+            
+        }
+        else{
+            $result=$connection->query($query);
+            while($row = $result->fetch_assoc()){
+            
+            
+                $ObjUsuario = new Usuario();
+                $ObjUsuario->constructor($row["id"],$row["nombre"],$row["apPat"],$row["apMat"],$row["tipo"],$row["tel"],$row["foto"],$row["email"],$row["categoria"]);
+                
 
+                array_push($ArrayUsuarios,$ObjUsuario);
+                
+                
+            };  
+        }   
+        return $ArrayUsuarios;
+    }
+
+    //Elimina un usuario desde un form
     if(isset($_POST["delUser"])){
         $connection = connect(0);
         $idUser=$_POST["id-Del"];
@@ -137,6 +171,8 @@
     }
 
     }
+
+
 
 
 ?>

@@ -47,6 +47,16 @@
                             <option value="6">Formación de Profesores</option>
                         </select>
                         <br>
+                        <label>Tipo de Usuario</label>
+                        <select name="r_userType" class="form-select w-75" aria-label="Default select example">
+                            
+                            <option selected value="1">Alumno</option>
+                            <option value="2">Profesor</option>
+                            <option value="3">Asesor</option>
+                            <option value="4">Administrador</option>
+                            
+                        </select>
+                        <br>
                         <h4>Datos Personales</h4>
                         <label>Nombre</label>
                         <input name="r_nombre" type="text" class="form-control w-75" placeholder="Ingresa Nombre">
