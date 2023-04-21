@@ -1,9 +1,12 @@
 <?php
  require("connection.php");
  require("services/usuarios_service.php");
- $ArrProfesores = get_Profesores();
+ require("services/clubes_service.php");
 
- echo var_dump($ArrProfesores);
+ $ArrProfesores = get_Profesores();
+ $ArrIdiomas = get_Idiomas();
+
+ //echo var_dump($ArrProfesores);
  
 ?>
 
@@ -59,13 +62,12 @@
             <br>
             <h6>Elija un idioma</h6>
             <select name="r_tipo" class="form-select w-75" aria-label="Default select example">
-                <option selected value="1">Japonés</option>
-                <option value="2">Inglés</option>
-                <option value="3">Español</option>
-                <option value="4">Aleman</option>
-                <option value="5">Italiano</option>
-                <option value="6">Frances</option>
-                <option value="7">Portugues</option>
+            <?php
+                foreach($ArrIdiomas as $Idioma){
+                    echo "<option value='".$Idioma->iId."'>".$Idioma->iNombre."</option>";
+                }
+                ?>
+                
             </select>
                     
             <br>
