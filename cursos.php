@@ -2,6 +2,7 @@
  require("connection.php");
  require("services/usuarios_service.php");
  require("services/clubes_service.php");
+ require("cursos_service.php");
 
  $ArrProfesores = get_Profesores();
  $ArrIdiomas = get_Idiomas();
@@ -60,8 +61,9 @@
 <br>
         <h2>Agregar un curso</h2>
             <br>
+            <form id="user-Delete" action="" method="post">
             <h6>Elija un idioma</h6>
-            <select name="r_tipo" class="form-select w-75" aria-label="Default select example">
+            <select name="r_idioma" class="form-select w-75" aria-label="Default select example">
             <?php
                 foreach($ArrIdiomas as $Idioma){
                     echo "<option value='".$Idioma->iId."'>".$Idioma->iNombre."</option>";
@@ -72,7 +74,7 @@
                     
             <br>
             <h6>Elija un profesor</h6>
-            <select name="r_tipo" class="form-select w-75" aria-label="Default select example">
+            <select name="r_prof" class="form-select w-75" aria-label="Default select example">
                 <?php
                 foreach($ArrProfesores as $Prof){
                     echo "<option value='".$Prof->uId."'>".$Prof->uNombre." ".$Prof->uApeP."</option>";
@@ -83,7 +85,7 @@
             
             <br>
             <h6>Seleccione un nivel</h6>
-            <select name="r_tipo" class="form-select w-75" aria-label="Default select example">
+            <select name="r_nivel" class="form-select w-75" aria-label="Default select example">
             <option selected value="1">1-2</option>
                 <option value="2">3-4</option>
                 <option value="3">5+</option>
@@ -91,13 +93,13 @@
             <br>
             <div class="d-flex justify-content-around">
                 
-                <input type="text" class ="form-control w-25"  placeholder="Clave">
-                <input type="text" class ="form-control w-25" placeholder="Cupo">
+                <input name="r_clave" type="text" class ="form-control w-25"  placeholder="Clave">
+                <input name="r_cupo" type="text" class ="form-control w-25" placeholder="Cupo">
             </div>
             <br>
             <div class="d-flex justify-content-center">
-            <form id="user-Delete" action="" method="post">
-            <button  type="submit" name="delUser" class="btn btn-danger">Añadir Curso</button>
+            
+            <button  type="submit" name="registraCurso" class="btn btn-danger">Añadir Curso</button>
             </form>
         </div>
         </div>

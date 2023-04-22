@@ -2,29 +2,23 @@
 
 if(isset($_POST["registraCurso"])){
     
-    if($_POST["r_id"]=="" 
-    || $_POST["r_tipo"]=="" 
-    || $_POST["r_nombre"]=="" 
-    || $_POST["r_apePat"]=="" 
-    || $_POST["r_apeMat"]=="" 
-    || $_POST["r_userType"]=="" ){
+    if($_POST["r_idioma"]=="" 
+    || $_POST["r_prof"]=="" 
+    || $_POST["r_nivel"]=="" 
+    || $_POST["r_clave"]=="" 
+    || $_POST["r_cupo"]=="" 
+    ){
         echo "DATOS INCOMPLETOS";
 
     }
     else{
-        /*
-    echo    $_POST["r_id"] . "</br>";
-    echo    $_POST["r_tipo"] . "</br>"; 
-    echo    $_POST["r_nombre"] . "</br>"; 
-    echo    $_POST["r_apePat"] . "</br>"; 
-    echo    $_POST["r_apeMat"] . "</br>";
-    */
-
-    $id    = $_POST["r_id"] ;
-    $pwd = "12345";
-    $tipo   = $_POST["r_userType"];           
-    $nombre =   $_POST["r_nombre"] ; 
-    $apePat =   $_POST["r_apePat"] ; 
+        $idioma = $_POST["r_idioma"];
+        $prof   = $_POST["r_prof"];
+        $nivel  = $_POST["r_nivel"];
+        $clave  = $_POST["r_clave"];
+        $cupo   = $_POST["r_cupo"];
+        echo $idioma . " " . $prof ." ". $nivel ." ". $clave ." ". $cupo;
+        alta_curso($idioma,$prof,$nivel,$clave,$cupo);
     }
 }
 

@@ -28,10 +28,10 @@
         return $ArrayIdiomas;
     }
 
-    function alta_curso($idCurso,$idProfesor,$idIdioma,$clave,$cupo){
+    function alta_curso($idIdioma,$idProfesor,$nivel,$clave,$cupo){
         $connection = connect();
-        $query = "INSERT INTO curso (idProfesor,idIdioma,clave,cupo)
-        values ('$idProfesor', '$idIdioma', '$clave', '$cupo')";
+        $query = "INSERT INTO curso (idProfesor,idIdioma,nivel,clave,cupo)
+        values ('$idProfesor', '$idIdioma','', '$clave', '$cupo')";
         if($connection->query($query)!=TRUE){
             echo("Error conectandose a la base de datos");
         }
