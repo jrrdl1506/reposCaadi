@@ -71,21 +71,9 @@
                 
             };  
         }
+        return $ArrayCurso;
     }
 
-    function get_profesor($idProfesor){
-        $connection = connect();
-        $query = "SELECT * FROM usuario WHERE idUsuario='$idProfesor' AND tipo=2";
-        if($connection -> query($query) != TRUE){
-            echo("Error al conectarse a la base de datos");
-        }
-        else{
-            $result=$connection->query($query);
-            $row = $result->fetch_assoc();
-            $ObjCurso = new Curso();
-            $ObjCurso->constructor($row["idCurso"],
-        }
-    }
 
     function get_idioma($idIdioma){
         $connection = connect();

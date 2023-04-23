@@ -48,6 +48,64 @@
         return $ObjUsuario;
     }
 
+    
+    /*
+        Esta funcion va a restornar distintos valores dependiendo del numero que se le mande
+        0- Retorna el id
+        1- Retorna el nombre
+        2- Retorna el apeP
+        3- Retorna el apeM
+        4- Retorna  el tipo
+        5- Retorna el telefono
+        6- Retorna el email
+        7- Retorna la categoria
+    */
+
+    function get_usuario_value($idUsuario,$valor){
+        
+        $Usuario=get_Usuario($idUsuario);
+        switch($valor){
+            case 0:{
+                return $Usuario->uId;
+            }
+            case 1:{
+                return $Usuario->uNombre;
+            }
+            case 2:{
+                return $Usuario->uApeP;
+            }
+            case 3:{
+                return $Usuario->uApeM;
+            }
+            case 4:{
+                return $Usuario->uTipo;
+            }
+            case 5:{
+                return $Usuario->uTel;
+            }
+            case 6:{
+                return $Usuario->uEmail;
+            }
+            case 7:{
+                return $Usuario->uCategory;
+            }
+        }
+       
+       
+       
+        $connection = connect();
+        $query = "SELECT * FROM usuario WHERE idUsuario='$idProfesor' AND tipo=2";
+        if($connection -> query($query) != TRUE){
+            echo("Error al conectarse a la base de datos");
+        }
+        else{
+            $result=$connection->query($query);
+            $row = $result->fetch_assoc();
+            $ObjCurso = new Curso();
+            $ObjCurso->constructor($row["idCurso"],
+        }
+    }
+
     //Borra un usuario
     function deleteUsuario($userId){
         $connection = connect();

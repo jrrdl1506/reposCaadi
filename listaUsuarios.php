@@ -85,7 +85,7 @@
       <div class="modal-body">
         <div style="text-align:center">
         <br>
-        <i class="fa fa-exclamation-triangle" style="font-size: 110px; color:rgba(188, 65, 79, 1)" aria-hidden="true"></i>
+        <i class="fa fa-exclamation-triangle" style="color: rgba(0, 201, 52, 0.8); color:rgba(255, 255, 255, 0.8)" aria-hidden="true"></i>
         <br>
         <h2>¿Está seguro?</h2>
 
