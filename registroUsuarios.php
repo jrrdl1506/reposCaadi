@@ -37,7 +37,7 @@
                         <input name="r_id" type="text" class="form-control w-75 " placeholder="Ingresa Id">
                         <br>
                         <label>Categoria</label>
-                        <select name="r_tipo" class="form-select w-75" aria-label="Default select example">
+                        <select name="r_cat" class="form-select w-75" aria-label="Default select example">
                             
                             <option selected value="1">Extensión</option>
                             <option value="2">DAFI</option>

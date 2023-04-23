@@ -31,7 +31,7 @@ if(isset($_POST["registraUsuario"])){
     $apeMat =   $_POST["r_apeMat"] ;
     $email = "---";
     $tel=0;
-    $cat=$_POST["r_tipo"];
+    $cat=$_POST["r_cat"];
     if ($_POST["r_tel"] != ""){
         $tel=$_POST["r_tel"];
     }

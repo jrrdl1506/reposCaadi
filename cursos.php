@@ -41,6 +41,49 @@
             <button class ="btn btn-danger"  data-bs-toggle='modal' data-bs-target='#exampleModal'>Agregar Cursos</button>
             <button class ="btn btn-warning">Agregar Alumnos</button>
         </div>
+        <br>
+        <table class="table table-danger table-striped">
+            <thead>
+                <tr>
+                <th scope="col">Clave</th>
+                <th scope="col">Idioma</th>
+                <th scope="col">Nivel</th>
+                <th scope="col">Profesor</th>
+                <th scope="col">Cupo</th>
+                <th scope="col">Alumnos</th>
+                <th scope="col">Editar</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                /*
+                    foreach ( $ArrUsuarios as  $User ){
+                        
+                        echo "<tr>";
+                        echo "<th scope='row'>".$User->uId."</th>";
+                        echo "<td>".$User->uNombre."</td>";
+                        echo "<td>".$User->uApeP."</td>";
+                        echo "<td>".obtenerTipo($User->uTipo)."</td>";
+                        echo "<td>".obtenerCategoria($User->uCategory)."</td>";
+
+                   
+                        echo "<td >
+                        <a href='userInfo.php?userId=".$User->uId."&action=view'><i  style='margin-left:5px;' class='fa fa-address-book i-info' ></i></a>
+                        <a href='userInfo.php?userId=".$User->uId."&action=edit'><i  style='margin-left:5px;' class='fa fa-wrench i-edit' aria-hidden='true'></i></a>
+                        <i  style='margin-left:5px;' class='fa fa-unlock-alt i-pwd' aria-hidden='true'></i>
+                        <i id='".$User->uId."' onclick='viewUser(this.id)' data-bs-toggle='modal' data-bs-target='#exampleModal' style='margin-left:5px;' class='fa fa-trash i-delete' aria-hidden='true'></i></td>";
+                       
+                        echo "</tr>";
+                    }
+                    */
+
+                ?>
+            
+            
+            
+            </tbody>
+        </table>
 
         <!-- Button trigger modal -->
 
@@ -58,7 +101,7 @@
         <br>
             <i class="fa fa-graduation-cap" style="font-size: 110px; color:rgb(38, 64, 130);" aria-hidden="true"></i>
             <br>
-<br>
+        <br>
         <h2>Agregar un curso</h2>
             <br>
             <form id="user-Delete" action="" method="post">
@@ -86,9 +129,9 @@
             <br>
             <h6>Seleccione un nivel</h6>
             <select name="r_nivel" class="form-select w-75" aria-label="Default select example">
-            <option selected value="1">1-2</option>
-                <option value="2">3-4</option>
-                <option value="3">5+</option>
+                <option selected value="1-2">1-2</option>
+                <option value="3-4">3-4</option>
+                <option value="5+">5+</option>
             </select>
             <br>
             <div class="d-flex justify-content-around">
