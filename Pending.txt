@@ -1,0 +1,14 @@
+Tasks
+	x-get curso
+	x-get profesor
+	x-get idioma
+	x-tabla foreach curso
+	x-añadir botones alumnos
+	- modals para cada uno de los botones
+	- mediante js obtener el id del curso y colocarlo en el modal
+	- peticion ajax para obtener curso y alumnos?
+	- contador cupo
+	- delete curso
+	- asociacion n a n alumno_curso
+	- 
+	

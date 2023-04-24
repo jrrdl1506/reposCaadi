@@ -2,3 +2,57 @@ select {
     display: block; /* Para que el elemento sea de bloque */
     margin: 0 auto; /* Para centrar horizontalmente */
   }
+
+
+table tr td .iconoAdduser{
+  width:35px;
+  height:35px;
+  background-color:rgb(38, 112, 231);
+  color: aliceblue;
+  border: none;
+  border-radius: 5px;
+  transition: all ease 0.3s;
+}
+
+table tr td .iconoAdduser:hover{
+
+  background-color:rgb(38, 73, 231);
+  color: aliceblue;
+
+}
+
+table tr td .iconoVerUsers{
+  width:35px;
+  height:35px;
+  background-color:rgb(232, 94, 3);
+  color: aliceblue;
+  border: none;
+  border-radius: 5px;
+  transition: all ease 0.3s;
+}
+
+table tr td .iconoVerUsers:hover{
+
+  background-color:rgb(188, 77, 2);
+  color: aliceblue;
+
+}
+
+
+table tr td .iconoEditCourse{
+  width:35px;
+  height:35px;
+  background-color:rgb(30, 152, 113);
+  color: aliceblue;
+  border: none;
+  border-radius: 5px;
+  transition: all ease 0.3s;
+
+}
+
+table tr td .iconoEditCourse:hover{
+
+  background-color:rgb(10, 98, 60);
+  color: aliceblue;
+
+}

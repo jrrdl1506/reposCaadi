@@ -1,0 +1,39 @@
+Tipo
+1	Alumno
+2	Profesor
+3	Asesor
+4	Administrador
+
+Categoria
+1	Extension
+2	DAFI
+3	Externos
+4	LDII
+5	FLE-ELE
+6	Formacion Profesores
+
+Idiomas
+	1 Japones
+	2 Ingles
+	3 Español
+	4 Aleman
+	5 Italiano
+	6 Frances
+	7 Portugues
+
+Niveles
+	1 1-2
+	2 3-4
+	3 5+
+
+
+
+Modificar Usuario
+m_id
+m_tipo
+m_cat
+m_nom
+m_apep
+m_apem
+m_tel
+m_email

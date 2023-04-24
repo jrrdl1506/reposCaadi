@@ -51,8 +51,8 @@
                 <th scope="col">Nivel</th>
                 <th scope="col">Profesor</th>
                 <th scope="col">Cupo</th>
-                <th scope="col">Alumnos</th>
-                <th scope="col">Editar</th>
+                <th scope="col">Opciones</th>
+               
                 
                 </tr>
             </thead>
@@ -62,13 +62,16 @@
                     foreach ( $ArrCursos as  $Curso ){
                         
                         echo "<tr>";
-                        echo "<th scope='row'>". $Curso -> cId ."</th>";
-                        echo "<td>".$Curso -> cIdIdioma ."</td>";
+                        echo "<th scope='row'>". $Curso -> cClave ."</th>";
+                        echo "<td>".get_idioma($Curso -> cIdIdioma) ."</td>";
                         echo "<td>".$Curso -> cNivel."</td>";
-                        echo "<td>".$Curso -> cClave."</td>";
+                        echo "<td>".get_usuario_value($Curso -> cIdProf,1) ." ".get_usuario_value($Curso -> cIdProf,2)."</td>";
                         echo "<td>".$Curso -> cCupo ."</td>";
-                        echo "<td class='d-flex justify-content-around'><button>Añadir</button><button>Eliminar</button></td>";
-                        echo "<td ><button>Eliminar</button></td>";
+                        echo "<td   class='d-flex justify-content-around'><button 
+                         class='iconoAdduser fa fa-user-plus' aria-hidden='true'></button>
+                         <button data-bs-toggle='addModal' data-bs-target='#addModal' class='iconoVerUsers fa fa-users' aria-hidden='true'></button>
+                         <button data-bs-toggle='addModal' data-bs-target='#exampleModal' class='iconoEditCourse fa fa-cog' aria-hidden='true'></button></td>";
+                        //echo "<td ><button>Eliminar</button></td>";
 
                    
                       
@@ -87,7 +90,7 @@
         <!-- Button trigger modal -->
 
 
-<!-- Modal -->
+<!-- Modal 1 -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -151,13 +154,79 @@
       </div>
     </div>
   </div>
-</div>
+
+
+
+  
+<!-- Modal Add-->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div style="text-align:center">
+        <br>
+            <i class="fa fa-graduation-cap" style="font-size: 110px; color:rgb(38, 64, 130);" aria-hidden="true"></i>
+            <br>
+        <br>
+        <h2>Agregar un alumno</h2>
+            <br>
+            <form id="user-Delete" action="" method="post">
+            <h6>Elija un idioma</h6>
+            <select name="r_idioma" class="form-select w-75" aria-label="Default select example">
+            <?php
+                foreach($ArrIdiomas as $Idioma){
+                    echo "<option value='".$Idioma->iId."'>".$Idioma->iNombre."</option>";
+                }
+                ?>
+                
+            </select>
+                    
+            <br>
+            <h6>Elija un profesor</h6>
+            <select name="r_prof" class="form-select w-75" aria-label="Default select example">
+                <?php
+                foreach($ArrProfesores as $Prof){
+                    echo "<option value='".$Prof->uId."'>".$Prof->uNombre." ".$Prof->uApeP."</option>";
+                }
+                ?>
+                
+            </select>
             
+            <br>
+            <h6>Seleccione un nivel</h6>
+            <select name="r_nivel" class="form-select w-75" aria-label="Default select example">
+                <option selected value="1-2">1-2</option>
+                <option value="3-4">3-4</option>
+                <option value="5+">5+</option>
+            </select>
+            <br>
+            <div class="d-flex justify-content-around">
+                
+                <input name="r_clave" type="text" class ="form-control w-25"  placeholder="Clave">
+                <input name="r_cupo" type="text" class ="form-control w-25" placeholder="Cupo">
+            </div>
+            <br>
+            <div class="d-flex justify-content-center">
+            
+            <button  type="submit" name="registraCurso" class="btn btn-danger">Añadir Curso</button>
+            </form>
         </div>
+        </div>
+      </div>
+      <div class="modal-footer">
         
-        
-    </temp>
-</div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/listaUsuarios.js"></script>
