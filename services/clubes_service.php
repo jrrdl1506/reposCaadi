@@ -1,7 +1,7 @@
 <?php
     require("classes/idioma.php");
     require("classes/curso.php");
-    require("classes/usuario.php");
+
 
     //Obtiene todos los idiomas
     function get_Idiomas(){
@@ -34,7 +34,7 @@
         
         $connection = connect();
         $query = "INSERT INTO curso (idProfesor,idIdioma,nivel,clave,cupo)
-        values ('$idProfesor', '$idIdioma','', '$clave', '$cupo')";
+        values ('$idProfesor', '$idIdioma','$nivel', '$clave', '$cupo')";
         if($connection->query($query)!=TRUE){
             echo("Error conectandose a la base de datos");
         }
@@ -45,10 +45,10 @@
 
     }
 
-    function get_cursos($idCurso){
+    function get_cursos(){
         $ArrayCurso=array();
         $connection = connect();
-        $query = "SELECT * FROM curso WHERE idCurso='$idCurso'";
+        $query = "SELECT * FROM curso";
         if($connection -> query($query) != TRUE){
             echo("Error al conectarse a la base de datos");
         }
@@ -66,7 +66,7 @@
                 $row["cupo"]);
                 
 
-                array_push($ArrayCursos,$ObjCurso);
+                array_push($ArrayCurso,$ObjCurso);
                 
                 
             };  
@@ -82,7 +82,12 @@
             echo("Error al conectarse a la base de datos");
         }
         else{
-            echo "Si se hizo el query";
+            $result=$connection->query($query);
+            $row = $result->fetch_assoc();
+            $ObjIdioma = new Idioma();
+            $ObjIdioma -> constructor($row["idIdioma"],$row["idioma"]);
+                
+            return $ObjIdioma -> Nombre;
         }
 
     }

@@ -6,6 +6,7 @@
 
  $ArrProfesores = get_Profesores();
  $ArrIdiomas = get_Idiomas();
+ $ArrCursos = get_cursos();
 
  //echo var_dump($ArrProfesores);
  
@@ -57,26 +58,24 @@
             </thead>
             <tbody>
                 <?php
-                /*
-                    foreach ( $ArrUsuarios as  $User ){
+                
+                    foreach ( $ArrCursos as  $Curso ){
                         
                         echo "<tr>";
-                        echo "<th scope='row'>".$User->uId."</th>";
-                        echo "<td>".$User->uNombre."</td>";
-                        echo "<td>".$User->uApeP."</td>";
-                        echo "<td>".obtenerTipo($User->uTipo)."</td>";
-                        echo "<td>".obtenerCategoria($User->uCategory)."</td>";
+                        echo "<th scope='row'>". $Curso -> cId ."</th>";
+                        echo "<td>".$Curso -> cIdIdioma ."</td>";
+                        echo "<td>".$Curso -> cNivel."</td>";
+                        echo "<td>".$Curso -> cClave."</td>";
+                        echo "<td>".$Curso -> cCupo ."</td>";
+                        echo "<td class='d-flex justify-content-around'><button>Añadir</button><button>Eliminar</button></td>";
+                        echo "<td ><button>Eliminar</button></td>";
 
                    
-                        echo "<td >
-                        <a href='userInfo.php?userId=".$User->uId."&action=view'><i  style='margin-left:5px;' class='fa fa-address-book i-info' ></i></a>
-                        <a href='userInfo.php?userId=".$User->uId."&action=edit'><i  style='margin-left:5px;' class='fa fa-wrench i-edit' aria-hidden='true'></i></a>
-                        <i  style='margin-left:5px;' class='fa fa-unlock-alt i-pwd' aria-hidden='true'></i>
-                        <i id='".$User->uId."' onclick='viewUser(this.id)' data-bs-toggle='modal' data-bs-target='#exampleModal' style='margin-left:5px;' class='fa fa-trash i-delete' aria-hidden='true'></i></td>";
+                      
                        
                         echo "</tr>";
                     }
-                    */
+                    
 
                 ?>
             

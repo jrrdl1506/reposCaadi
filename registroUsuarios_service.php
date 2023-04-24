@@ -6,7 +6,7 @@ $connection = connect(0);
 if(isset($_POST["registraUsuario"])){
     
     if($_POST["r_id"]=="" 
-    || $_POST["r_tipo"]=="" 
+    || $_POST["r_cat"]=="" 
     || $_POST["r_nombre"]=="" 
     || $_POST["r_apePat"]=="" 
     || $_POST["r_apeMat"]=="" 
@@ -51,9 +51,8 @@ if(isset($_POST["registraUsuario"])){
     values ('$id', '$nombre', '$apePat', '$apeMat', '$tel', '$pwd', '$tipo', '$foto','$email','$cat')";
     
     if($connection->query($query) != TRUE){
-        $_SESSION["message"] = '"Hubo un problema. Contacte al personal de CAADI.","Error: '.$connection->error.'","error"';
-        disconnect($connection);
-        header('Location:'.$url);
+         echo "Hubo un problema. Contacte al personal de CAADI.";
+    
     }
     else {
         echo ("Si se hizo el query");
