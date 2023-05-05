@@ -87,7 +87,7 @@
             $ObjIdioma = new Idioma();
             $ObjIdioma -> constructor($row["idIdioma"],$row["idioma"]);
                 
-            return $ObjIdioma -> Nombre;
+            return $ObjIdioma -> iNombre;
         }
 
     }

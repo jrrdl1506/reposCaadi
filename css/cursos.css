@@ -2,3 +2,47 @@ select {
     display: block; /* Para que el elemento sea de bloque */
     margin: 0 auto; /* Para centrar horizontalmente */
   }
+
+
+table tr td .btn_curso {
+
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+
+
+table tr td .btn_añadir{
+  background-color: #125dc7 !important;
+  color: rgb(255, 255, 255);
+
+}
+
+table tr td .btn_añadir:hover{
+  background-color: #1b70e6 !important;
+  color: rgb(255, 255, 255);
+
+}
+
+table tr td  .btn_eliminar{
+  background-color: #c71212 !important;
+
+}
+
+table tr td  .btn_eliminar:hover{
+  background-color: #eb1919 !important;
+
+}
+
+table tr td  .btn_editar{
+  background-color: #16921a !important;
+}
+
+table tr td  .btn_editar:hover{
+  background-color: #24d32a !important;
+}
+
+

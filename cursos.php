@@ -39,7 +39,7 @@
         <div class="d-flex flex-column top-bar3">
         <br>
         <div class="d-flex justify-content-center">
-            <button class ="btn btn-danger"  data-bs-toggle='modal' data-bs-target='#exampleModal'>Agregar Cursos</button>
+            <button onclick='viewCurso(0,0)' class ="btn btn-danger"  data-bs-toggle='modal' data-bs-target='#exampleModal'>Agregar Cursos</button>
             <button class ="btn btn-warning">Agregar Alumnos</button>
         </div>
         <br>
@@ -52,7 +52,7 @@
                 <th scope="col">Profesor</th>
                 <th scope="col">Cupo</th>
                 <th scope="col">Alumnos</th>
-                <th scope="col">Editar</th>
+            
                 
                 </tr>
             </thead>
@@ -62,13 +62,17 @@
                     foreach ( $ArrCursos as  $Curso ){
                         
                         echo "<tr>";
-                        echo "<th scope='row'>". $Curso -> cId ."</th>";
-                        echo "<td>".$Curso -> cIdIdioma ."</td>";
+                        echo "<th id='".$Curso -> cId."' scope='row'>". $Curso -> cClave ."</th>";
+                        echo "<td>".get_idioma($Curso -> cIdIdioma) ."</td>";
                         echo "<td>".$Curso -> cNivel."</td>";
-                        echo "<td>".$Curso -> cClave."</td>";
+                        echo "<td>".get_usuario_value($Curso -> cIdProf,1)." ".get_usuario_value($Curso -> cIdProf,2)."</td>";
                         echo "<td>".$Curso -> cCupo ."</td>";
-                        echo "<td class='d-flex justify-content-around'><button>Añadir</button><button>Eliminar</button></td>";
-                        echo "<td ><button>Eliminar</button></td>";
+                        echo "<td >
+                        <button id='".$Curso -> cId."' onclick='viewCurso(this.id,1)' data-bs-toggle='modal' data-bs-target='#exampleModal' class='fa fa-user-plus btn_curso btn_añadir'></button>
+                        <button id='".$Curso -> cId."' onclick='viewCurso(this.id,2)' data-bs-toggle='modal' data-bs-target='#exampleModal' class='fa fa-user-times btn_curso btn_eliminar'></button>
+                        <button id='".$Curso -> cId."' onclick='viewCurso(this.id,3)' data-bs-toggle='modal' data-bs-target='#exampleModal' class='fa fa-wrench btn_curso btn_editar ' ></button>
+                        </td>";
+                        
 
                    
                       
@@ -101,6 +105,7 @@
             <i class="fa fa-graduation-cap" style="font-size: 110px; color:rgb(38, 64, 130);" aria-hidden="true"></i>
             <br>
         <br>
+        <h6 id="id-curso" type="hidden">ID DE CURSO</h6>
         <h2>Agregar un curso</h2>
             <br>
             <form id="user-Delete" action="" method="post">
@@ -159,8 +164,47 @@
     </temp>
 </div>
 
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div style="text-align:center">
+        <br>
+        <i class="fa fa-exclamation-triangle" style="color: rgba(0, 201, 52, 0.8); color:rgba(255, 255, 255, 0.8)" aria-hidden="true"></i>
+        <br>
+        <h2>¿Está seguro?</h2>
+
+            <h4 id="target-Modal">Está por eliminar al usuario: Jorge Romo</h4>
+            <br>
+            <div class="d-flex justify-content-center">
+            <form id="user-Delete" action="" method="post">
+            <button  type="submit" name="delUser" class="btn btn-danger">Eliminar Usuario</button>
+            </form>
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+            
+        </div>
+        
+        
+    </temp>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="js/listaUsuarios.js"></script>
+<script src="js/cursos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
@@ -183,5 +227,5 @@
 
     </script>
     
-
+   
 </html>
