@@ -1,0 +1,47 @@
+
+table tr td .btn_añadir{
+    background-color: #c71212 !important;
+    color: rgb(255, 255, 255);
+    width: 50px;
+    height: 30px;
+    border: none;
+    border-radius: 15%;
+  }
+  
+  table tr td .btn_añadir:hover{
+    background-color: #e61b1b !important;
+    color: rgb(255, 255, 255);
+  
+  }
+  
+ form .btn_eliminar{
+    background-color: #1637e0 !important;
+    color: rgb(255, 255, 255);
+    height: 40px;
+    width: 170px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+  
+  }
+  
+   form .btn_eliminar:hover{
+    background-color: #0d24a7 !important;
+    color: rgb(255, 255, 255);
+    height: 40px;
+    width: 170px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 15px;
+  
+  
+  }
+  
+  table tr td  .btn_editar{
+    background-color: #16921a !important;
+  }
+  
+  table tr td  .btn_editar:hover{
+    background-color: #24d32a !important;
+  }
