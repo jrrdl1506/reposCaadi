@@ -1,3 +1,21 @@
+<?php
+require("connection.php");
+require("services/usuarios_service.php");
+require("services/clubes_service.php");
+$Curso=get_curso($_GET["cursoId"]);
+$Idioma=get_idioma($Curso->cIdIdioma);
+$Prof=get_Usuario($Curso->cIdProf);
+$ArrIdiomas=get_Idiomas();
+$ArrProfesores=get_Profesores();
+
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,9 +42,9 @@
         <div class="d-flex flex-column top-bar2"></div>
         <div class="d-flex flex-column top-bar3">
             <br>    
-            <form>
+            <form action="cursos_config_service.php" method="POST">
                 <div style="text-align:center">
-               <h2 style="margin-left:5%;">Clave del curso</h2>
+               <h2 style="margin-left:5%;"><?php echo $Curso->cClave ?></h2>
                <br>
                 </div>
                 <div style="text-align:center">
@@ -34,7 +52,7 @@
                     <div>
                     <h5>Clave</h5>
                     <div class="d-flex justify-content-center">
-                    <input type="text" class = "form-control w-100">
+                    <input type="text" class = "form-control w-100" placeholder="<?php echo $Curso->cClave  ?>">
                     </div>
                 </div>
                    
@@ -42,10 +60,13 @@
                     <h5>Idioma</h5>
                     <div class="d-flex justify-content-center">
                         <select name='m_tipo' class='form-select' style='width:300px;' aria-label='Default select example'>                        
-                            <option selected value='1'>Alumno</option>
-                            <option value='2'>Asesor</option>
-                            <option value='3'>Profesor</option>
-                            <option value='4'>Administrador</option>
+                            <option disabled selected value="0"><?php echo $Idioma ?></option>
+                            <?php
+                                 foreach ( $ArrIdiomas as  $Idioma ){
+                                    echo "<option value='".$Idioma->iId."'>".$Idioma->iNombre."</option>";
+                                 }
+                            ?>
+                            
     
                         </select>
                     </div>
@@ -54,19 +75,22 @@
 
                    <div>
                     <h5>Profesor</h5>
-                        <div class="d-flex justify-content-center">
-                            <select name='m_tipo' class='form-select' style='width:300px;' aria-label='Default select example'>                        
-                                <option selected value='1'>Alumno</option>
-                                <option value='2'>Asesor</option>
-                                <option value='3'>Profesor</option>
-                                <option value='4'>Administrador</option>
-        
-                            </select>
-                        </div>
+                    <div class="d-flex justify-content-center">
+                        <select name='m_tipo' class='form-select' style='width:300px;' aria-label='Default select example'>                        
+                            <option disabled selected value="0"><?php echo $Prof->uNombre . " ". $Prof->uApeP ?></option>
+                            <?php
+                                 foreach ( $ArrProfesores as  $Profesor ){
+                                    echo "<option value='".$Profesor->uId."'>".$Profesor->uNombre." ".$Profesor->uApeP."</option>";
+                                 }
+                            ?>
+                            
+    
+                        </select>
+                    </div>
                     </div>
 
                     <div>
-                    <button class="btn_eliminar" >Añadir Alumno</button>
+                    <button class="btn_eliminar" type="submit" name="altaAlumnoCurso">Añadir Alumno</button>
                     </div>
 
                 </div>

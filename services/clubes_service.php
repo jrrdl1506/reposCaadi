@@ -74,6 +74,27 @@
         return $ArrayCurso;
     }
 
+    function get_curso($idCurso){
+        $connection = connect();
+        $query = "SELECT * FROM curso WHERE idCurso=".$idCurso;
+        if($connection -> query($query) != TRUE){
+            echo("Error al conectarse a la base de datos");
+        }
+        else{
+            $result=$connection->query($query);
+            $row = $result->fetch_assoc();    
+            $ObjCurso = new Curso();
+            $ObjCurso->constructor($row["idCurso"],
+            $row["idProfesor"],
+            $row["idIdioma"],
+            $row["nivel"],
+            $row["clave"],
+            $row["cupo"]);
+            
+        }
+        return $ObjCurso;
+    }
+
 
     function get_idioma($idIdioma){
         $connection = connect();

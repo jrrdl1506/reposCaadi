@@ -1,7 +1,11 @@
 
 
 function viewCurso(id,modo=0){
-   switch(modo){
+    window.location.href = "cursos_config.php?cursoId="+id;
+
+   /*switch(modo){
+
+    
     case 0:{
         modo="Agregar Curso";
         obtenerCurso(id);
@@ -25,10 +29,11 @@ function viewCurso(id,modo=0){
     
 
    }
+   
     $("#target-Modal").text("Se va a elminar al usuario " + id);
     var elemento = document.getElementById("id-curso");
     elemento.innerHTML=id + " " +modo;
-
+    */
    
 }
 

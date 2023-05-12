@@ -73,7 +73,7 @@
                         echo "<td>".get_usuario_value($Curso -> cIdProf,1)." ".get_usuario_value($Curso -> cIdProf,2)."</td>";
                         echo "<td>".$Curso -> cCupo ."</td>";
                         echo "<td >
-                        <button id='".$Curso -> cId."' onclick='viewCurso(this.id,1)' data-bs-toggle='modal' data-bs-target='#exampleModal' class='fa fa-user-plus btn_curso btn_añadir'></button>
+                        <a href='cursos_config.php?cursoId=".$Curso -> cId ."'class='fa fa-wrench  btn_curso btn_añadir' class='sub-item'><i ></i></a>
                         <button id='".$Curso -> cId."' onclick='viewCurso(this.id,2)' data-bs-toggle='modal' data-bs-target='#exampleModal' class='fa fa-user-times btn_curso btn_eliminar'></button>
                         <button id='".$Curso -> cId."' onclick='viewCurso(this.id,3)' data-bs-toggle='modal' data-bs-target='#exampleModal' class='fa fa-wrench btn_curso btn_editar ' ></button>
                         </td>";
