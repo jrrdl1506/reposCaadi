@@ -2,11 +2,13 @@
 require("connection.php");
 require("services/usuarios_service.php");
 require("services/clubes_service.php");
+
 $Curso=get_curso($_GET["cursoId"]);
 $Idioma=get_idioma($Curso->cIdIdioma);
 $Prof=get_Usuario($Curso->cIdProf);
 $ArrIdiomas=get_Idiomas();
 $ArrProfesores=get_Profesores();
+$Alumnos_curso=get_usuarios_curso($_GET["cursoId"]);
 
 
 
@@ -49,12 +51,8 @@ $ArrProfesores=get_Profesores();
                 </div>
                 <div style="text-align:center">
                     <div class="d-flex justify-content-around">
-                    <div>
-                    <h5>Clave</h5>
-                    <div class="d-flex justify-content-center">
-                    <input type="text" class = "form-control w-100" placeholder="<?php echo $Curso->cClave  ?>">
-                    </div>
-                </div>
+                    
+               
                    
                 <div>
                     <h5>Idioma</h5>
@@ -70,7 +68,8 @@ $ArrProfesores=get_Profesores();
     
                         </select>
                     </div>
-                    </div>    
+                    </div>
+                        
 
 
                    <div>
@@ -90,10 +89,23 @@ $ArrProfesores=get_Profesores();
                     </div>
 
                     <div>
-                    <button class="btn_eliminar" type="submit" name="altaAlumnoCurso">Añadir Alumno</button>
+                        
+                    <button class="btn_eliminar" type="submit" name="modificarCurso">Modificar</button>
                     </div>
 
                 </div>
+               </div>
+               <br><br>
+               <input type="hidden" value="<?php echo $Curso->cId; ?>" name="id_curso">
+               <h4 style="margin-left:35px;">Añadir Alumnos</h4>
+               <div class="d-flex ">
+                
+               <input type="text" class = "form-control "  
+               style="width:300px; height:40px; margin-top:30px; margin-right:10px; margin-left:35px;" 
+               placeholder="Id Alumno a Añadir" name="id_alumno">
+                    <div>
+                        <button class="btn_eliminar" type="submit" name="altaAlumnoCurso">Añadir Alumno</button>
+                    </div>       
                </div>
 
                <br>
@@ -113,32 +125,22 @@ $ArrProfesores=get_Profesores();
                     </thead>
                     <tbody>
                   
-                        <tr>
-                            <th>226959</th>
-                            <td>Jorge</td>
-                            <td>Romo</td>
-                            <td><button class="btn_añadir fa fa-times" ></button></td>
-                        </tr>
+                       
                         <?php
-                            /*foreach ( $ArrUsuarios as  $User ){
+                            foreach ( $Alumnos_curso as  $User ){
                                 
                                 echo "<tr>";
                                 echo "<th scope='row'>".$User->uId."</th>";
                                 echo "<td>".$User->uNombre."</td>";
                                 echo "<td>".$User->uApeP."</td>";
-                                
+                                echo "<td><button class='btn_añadir fa fa-times' ></button></td>";
 
                         
-                                echo "<td >
-                                <a href='userInfo.php?userId=".$User->uId."&action=view'><i  style='margin-left:5px;' class='fa fa-address-book i-info' ></i></a>
-                                <a href='userInfo.php?userId=".$User->uId."&action=edit'><i  style='margin-left:5px;' class='fa fa-wrench i-edit' aria-hidden='true'></i></a>
-                                <i  style='margin-left:5px;' class='fa fa-unlock-alt i-pwd' aria-hidden='true'></i>
-                                <i id='".$User->uId."' onclick='viewUser(this.id)' data-bs-toggle='modal' data-bs-target='#exampleModal' style='margin-left:5px;' class='fa fa-trash i-delete' aria-hidden='true'></i></td>";
-                            
+                              
                                 echo "</tr>";
                             }
 
-        */
+        
                         ?>
                     
                     

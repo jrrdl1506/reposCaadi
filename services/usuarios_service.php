@@ -48,6 +48,18 @@
         return $ObjUsuario;
     }
 
+    function busca_usuario($userId){
+        $connection = connect();
+        $query = "SELECT * FROM usuario WHERE id=$userId";
+        $result = $connection->query($query);
+    
+        if ($result && $result->num_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     
     /*
         Esta funcion va a restornar distintos valores dependiendo del numero que se le mande
@@ -198,6 +210,20 @@
         }   
         return $ArrayUsuarios;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //Elimina un usuario desde un form
     if(isset($_POST["delUser"])){

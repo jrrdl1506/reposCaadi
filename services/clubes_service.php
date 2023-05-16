@@ -1,6 +1,7 @@
 <?php
     require("classes/idioma.php");
     require("classes/curso.php");
+    
 
 
     //Obtiene todos los idiomas
@@ -44,6 +45,19 @@
         
 
     }
+
+    function alta_alumno_curso($idAlumno,$idCurso){
+        $connection = connect();
+        $query = "INSERT INTO curso_alumno (idCurso,idAlumno)
+        values ('$idCurso', '$idAlumno')";
+        if($connection->query($query)!=TRUE){
+            echo("Error conectandose a la base de datos");
+        }
+        else{
+           echo "Si se hizo el query";
+        }
+    }
+
 
     function get_cursos(){
         $ArrayCurso=array();
@@ -111,6 +125,41 @@
             return $ObjIdioma -> iNombre;
         }
 
+    }
+
+    //Regresa todos los usuarios de un curso
+    function get_usuarios_curso($idCurso){
+        $ArrayUsuarios = array();
+        $connection = connect();
+        $query = "SELECT `usuario`.* FROM `usuario` JOIN `curso_alumno` ON `usuario`.`id` = `curso_alumno`.`idAlumno` 
+        JOIN `curso` ON `curso`.`idCurso` = `curso_alumno`.`idCurso` WHERE `curso`.`idCurso` = '".$idCurso."';";
+        if($connection -> query($query) != TRUE){
+            echo("Error al conectarse a la base de datos");
+        }
+        else{
+            $result=$connection->query($query);
+            while($row = $result->fetch_assoc()){
+            
+                $ObjUsuario = new Usuario();
+                $ObjUsuario->constructor(
+                    $row["id"],
+                    $row["nombre"],
+                    $row["apPat"],
+                    $row["apMat"],
+                    $row["tipo"],
+                    $row["tel"],
+                    $row["foto"],
+                    $row["email"],
+                    $row["categoria"]);
+
+                
+
+                array_push($ArrayUsuarios,$ObjUsuario);
+                
+                
+            };  
+        }
+        return $ArrayUsuarios;
     }
 
     
