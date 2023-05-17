@@ -20,6 +20,7 @@ require("services/clubes_service.php");
             else{
                 echo "No se encontro el alumno";
             }
+            header("Location: cursos_config.php?cursoId=".$_POST["id_curso"]);
             
         }
     }
@@ -28,6 +29,14 @@ require("services/clubes_service.php");
     if(isset($_POST['modificarCurso'])) {
         echo "MODIFICA";
       
+    }
+
+    if (isset($_POST['idAlumno']) && isset($_POST['idCurso'])) {
+        $idAl = $_POST['idAlumno'];
+        $idCur = $_POST['idCurso'];
+
+        delete_usuario_curso($idCur,$idAl);
+    
     }
 
 ?>

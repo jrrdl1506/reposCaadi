@@ -107,7 +107,7 @@ $Alumnos_curso=get_usuarios_curso($_GET["cursoId"]);
                         <button class="btn_eliminar" type="submit" name="altaAlumnoCurso">Añadir Alumno</button>
                     </div>       
                </div>
-
+               </form>
                <br>
                <br>
                <h4 style="margin-left:5%;">Alumnos en el curso</h4>
@@ -133,7 +133,7 @@ $Alumnos_curso=get_usuarios_curso($_GET["cursoId"]);
                                 echo "<th scope='row'>".$User->uId."</th>";
                                 echo "<td>".$User->uNombre."</td>";
                                 echo "<td>".$User->uApeP."</td>";
-                                echo "<td><button class='btn_añadir fa fa-times' ></button></td>";
+                                echo "<td><button id=".$User->uId." onclick='borrarAlumno(this.id,".$_GET["cursoId"].")' class='btn_añadir fa fa-times' ></button></td>";
 
                         
                               
@@ -149,7 +149,7 @@ $Alumnos_curso=get_usuarios_curso($_GET["cursoId"]);
                 </table>
         </div>
 
-            </form>
+           
             
             
         </div>
@@ -157,7 +157,7 @@ $Alumnos_curso=get_usuarios_curso($_GET["cursoId"]);
         
     </temp>
 </div>
-
+    <script src="js/cursos_config.js"></script>
     
     
    

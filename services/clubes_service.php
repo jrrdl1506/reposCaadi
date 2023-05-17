@@ -162,6 +162,17 @@
         return $ArrayUsuarios;
     }
 
+    function delete_usuario_curso($idCurso,$idUsu){
+        $connection = connect();
+        $query="DELETE FROM curso_alumno WHERE idCurso=$idCurso AND idAlumno=$idUsu ";
+        if($connection->query($query)!=TRUE){
+            echo("Error conectandose a la base de datos");
+        }
+        else{
+            echo "Si se hizo el query";
+        }
+    }
+
     
 
     
